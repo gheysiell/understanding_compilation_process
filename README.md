@@ -1,10 +1,10 @@
 # understanding_compilation_process
 
-## 📌 Descrição
+## Descrição
 
 Este projeto foi feito para entender como uma linguagem de alto nível como C se torna código binário, explicando cada etapa desse processo.
 
-## 🚀 Introdução
+## Introdução
 
 Para compilarmos um código C para código binário, o comando mais comum é:
 
@@ -14,14 +14,14 @@ gcc main.c -o main
 
 Mas vamos entender internamente o que ocorre quando esse comando é executado.
 
-## ⚙️ Etapas do Processo de Compilação
+## Etapas do Processo de Compilação
 
 ### 🔹 1. Pré-processamento
 
 - Gera o arquivo intermediário **`main.i`**, realizando transformações como inclusão
 de arquivos (#include), expansão de macros (#define) e remoção de comentários.
 
-📌 Para inspecionar o arquivo gerado:
+Para inspecionar o arquivo gerado:
 
 ```sh
 gcc -E main.c -o main.i
@@ -35,7 +35,7 @@ gcc -E main.c -o main.i
 
 - O arquivo **`main.i`** é então convertido para código Assembly **`main.s`**.
 
-📌 Para inspecionar o arquivo gerado:
+Para inspecionar o arquivo gerado:
 
 ```sh
 gcc -S main.c -o main.s
@@ -51,7 +51,7 @@ gcc -S main.c -o main.s
 - O arquivo **`main.o`** contém binário, mas ainda não é executável, pois ainda não passou pelo Linker, que
   no caso é a próxima etapa.
 
-📌 Para inspecionar o arquivo gerado:
+Para inspecionar o arquivo gerado:
 
 ```sh
 gcc -c main.c -o main.o
@@ -67,7 +67,7 @@ gcc -c main.c -o main.o
 - Código extra é adicionado para inicialização e finalização do programa.
 - Gera o executável final **`main`**.
 
-📌 Para inspecionar o arquivo gerado:
+Para inspecionar o arquivo gerado:
 
 ```sh
 gcc main.o -o main
@@ -77,6 +77,6 @@ gcc main.o -o main
 
 ---
 
-## 🎯 Conclusão
+## Conclusão
 
 Esse fluxo mostra como um código-fonte C é transformado em um programa executável. Com isso, é possível entender melhor cada etapa do processo de compilação.
